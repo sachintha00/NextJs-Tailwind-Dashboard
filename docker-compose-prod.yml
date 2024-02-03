@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  optiomax-app:
+    image: ghcr.io/sachintha00/optiomax-app:$VERSION
+    container_name: optiomax-app
+    ports:
+      - 3000:3000
