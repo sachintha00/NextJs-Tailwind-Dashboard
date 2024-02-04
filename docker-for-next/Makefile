@@ -14,9 +14,6 @@ up:
 down:
 	docker compose -f docker-compose-dev.yml down --remove-orphans
 
-shell-app:
-	docker exec -u www-data -it app /bin/sh
-
-shell-db:
-	docker exec -it app_db /bin/sh
+shell:
+	docker exec -it next-app /bin/sh
 
