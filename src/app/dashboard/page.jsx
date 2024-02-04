@@ -1,10 +1,11 @@
 import React from 'react'
 
-function DashboardPage() {
+function Dashboard() {
   return (
     <div>
+      Test
     </div>
   )
 }
 
-export default DashboardPage
+export default Dashboard;
