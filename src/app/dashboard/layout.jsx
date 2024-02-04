@@ -19,7 +19,7 @@ function DashboardLayout({ children }) {
       <body className={inter.className}>
         <TopNavigation />
         <SideMenu />
-        {/* {children} */}
+        {children}
       </body>
     </html>
   );
