@@ -1,9 +1,9 @@
-'use client'
+"use client";
 import React, { useEffect } from "react";
-import TopNavigation from "./_components/top_navigation/top_navigation";
-import SideNavigation from "./_components/side_navigation/side_navigation";
-import LayoutHeader from "./layout_header";
 import { Inter } from "next/font/google";
+import LayoutHeader from "./layout_header";
+import SideMenu from "./_components/side_menu/side_menu";
+import TopNavigation from "./_components/top_navigation/top_navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,10 +15,10 @@ function DashboardLayout({ children }) {
 
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      {/* <LayoutHeader /> */}
-      <body data-mode="light" className={inter.className}>
-        {/* <TopNavigation /> */}
-        <SideNavigation />
+      <LayoutHeader />
+      <body className={inter.className}>
+        <TopNavigation />
+        <SideMenu />
         {/* {children} */}
       </body>
     </html>
