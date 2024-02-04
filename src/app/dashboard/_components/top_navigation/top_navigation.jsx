@@ -11,7 +11,7 @@ function TopNavigation() {
               className="flex items-center text-lg flex-shrink-0 font-bold dark:text-white leading-[69px]"
             >
               <img
-                src="assets/images/logo-sm.svg"
+                src="/images/logo-sm.svg"
                 alt=""
                 className="inline-block w-6 h-6 align-middle ltr:xl:mr-2 rtl:xl:ml-2"
               />
@@ -182,7 +182,7 @@ function TopNavigation() {
                 >
                   <img
                     className="border-[3px] border-gray-700 dark:border-zinc-400 rounded-full w-9 h-9 ltr:xl:mr-2 rtl:xl:ml-2"
-                    src="assets/images/avatar-1.jpg"
+                    src="/images/avatar-1.jpg"
                     alt="Header Avatar"
                   />
                   <span className="hidden font-medium xl:block">Shawn L.</span>
