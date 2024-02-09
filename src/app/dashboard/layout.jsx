@@ -1,28 +1,26 @@
 "use client";
-import React, { useEffect } from "react";
-import { Inter } from "next/font/google";
-import LayoutHeader from "./layout_header";
-import SideMenu from "../_components/side_menu/side_menu";
-import TopNavigation from "../_components/top_navigation/top_navigation";
+import React, { useState } from "react";
+import Sidebar from "../_components/sidebar/sidebar";
+import TopNavbar from "../_components/top_navbar/top_navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const AuthLayout = ({ children }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-function DashboardLayout({ children }) {
-  useEffect(() => {
-    document.body.setAttribute("data-mode", "light");
-    document.body.setAttribute("data-sidebar-size", "lg");
-  }, []);
-
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <LayoutHeader />
-      <body className={inter.className}>
-        <TopNavigation />
-        <SideMenu />
-        {children}
-      </body>
-    </html>
+    <div className="flex">
+      <Sidebar isSidebarOpen={isSidebarOpen} />
+      <div className="flex flex-col w-full">
+        <TopNavbar
+          toggleSidebar={toggleSidebar}
+          isSidebarOpen={isSidebarOpen}
+        />
+        <div className="flex-grow p-4 overflow-y-auto">{children}</div>
+      </div>
+    </div>
   );
-}
+};
 
-export default DashboardLayout;
+export default AuthLayout;
