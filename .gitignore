@@ -1,4 +1,0 @@
-**/*.env
-**/volumes
-!**/temp*.env
-/ssh/*
