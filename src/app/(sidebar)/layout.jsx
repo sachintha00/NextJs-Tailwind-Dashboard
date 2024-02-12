@@ -4,11 +4,12 @@ import Sidebar from "../_components/sidebar/sidebar";
 import TopNavbar from "../_components/top_navbar/top_navbar";
 
 const AuthLayout = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
   return (
     <div className="flex">
       <Sidebar isSidebarOpen={isSidebarOpen} />
