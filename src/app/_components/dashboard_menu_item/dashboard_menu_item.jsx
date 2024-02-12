@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MdDashboard } from "react-icons/md";
+import Link from "next/link";
 
 function DashboardMenuItem({ isSidebarOpen, menuItem }) {
   const [mainMenuItems, setMainMenuItems] = useState(() => {
@@ -47,37 +48,60 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
       return updatedMainMenuItems;
     });
   };
+
   return (
     <div
-      className={`fixed bottom-0 h-screen border-r top-[70px] bg-slate-50 border-black-800`}
+      className={`fixed bottom-0 h-screen border-r top-[70px] bg-white border-black-800 z-40`}
       style={{ width: isSidebarOpen ? "250px" : "65px" }}
     >
-      <nav className="flex-grow mt-2 overflow-y-auto">
+      <nav className="flex-grow mt-2 overflow-y-hidden">
         <ul className="mt-4">
           {menuItem.map((dashboard, dashboardIndex) => (
             <li key={dashboardIndex}>
               <ul>
                 <li
-                  className="flex items-center px-4 py-2 cursor-default"
+                  className="flex items-center px-4 py-2 cursor-pointer"
                   onClick={() => toggleMainMenu(dashboardIndex)}
                 >
                   <MdDashboard className={`mr-2`} />
-                  <span className={!isSidebarOpen ? "hidden" : ""}>
-                    {dashboard.menu}
-                  </span>
+                  {dashboard.hasOwnProperty("link") ? (
+                    <Link
+                      href={dashboard.link}
+                      className={!isSidebarOpen ? "hidden" : ""}
+                    >
+                      {dashboard.menu}
+                    </Link>
+                  ) : (
+                    <div className={!isSidebarOpen ? "hidden" : ""}>
+                      {dashboard.menu}
+                    </div>
+                  )}
                 </li>
                 {mainMenuItems[dashboardIndex] && (
                   <div>
                     {dashboard.subMenu.map((submenuItem, submenuIndex) => (
                       <React.Fragment key={submenuIndex}>
-                        <li
-                          className="px-4 py-2 cursor-pointer"
-                          onClick={() =>
-                            toggleSubmenu(dashboardIndex, submenuIndex)
-                          }
-                        >
-                          {submenuItem.subMenuName}
-                        </li>
+                        {submenuItem.hasOwnProperty("link") ? (
+                          <Link
+                            href={submenuItem.link}
+                            className="block px-4 py-2 cursor-pointer"
+                            onClick={() =>
+                              toggleSubmenu(dashboardIndex, submenuIndex)
+                            }
+                          >
+                            {submenuItem.subMenuName}
+                          </Link>
+                        ) : (
+                          <li
+                            className="px-4 py-2 cursor-pointer"
+                            onClick={() =>
+                              toggleSubmenu(dashboardIndex, submenuIndex)
+                            }
+                          >
+                            {submenuItem.subMenuName}
+                          </li>
+                        )}
+
                         {submenuItem.submenuItems?.nestedSubMenu && (
                           <div
                             style={{
@@ -91,12 +115,13 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                             <ul className="mt-2 ml-4 tree-view">
                               {submenuItem.submenuItems.nestedSubMenu.map(
                                 (nestedItem, nestedIndex) => (
-                                  <li
-                                    className="px-4 py-2 cursor-default"
+                                  <Link
+                                    href={nestedItem.link}
                                     key={nestedIndex}
+                                    className="block px-2 py-2 cursor-pointer"
                                   >
-                                    {nestedItem}
-                                  </li>
+                                    {nestedItem.name}
+                                  </Link>
                                 )
                               )}
                             </ul>

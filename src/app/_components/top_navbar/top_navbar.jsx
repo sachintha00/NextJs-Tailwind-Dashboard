@@ -3,6 +3,8 @@ import { BiSearchAlt } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
 import LogoOptioMax from "../../_assets/images/logo-sm.svg";
+import LanguageComponent from "../language_component/language_component";
+import ProfileComponent from "../profile_component/profile_component";
 
 function TopNavbar({ toggleSidebar, isSidebarOpen }) {
   const sidebarWidth = isSidebarOpen ? "250px" : "65px";
@@ -51,7 +53,9 @@ function TopNavbar({ toggleSidebar, isSidebarOpen }) {
               </div>
             </div>
           </div>
-          <div>Profile</div>
+          <div className="z-50 flex mx-12">
+            <ProfileComponent />
+          </div>
         </div>
       </div>
     </nav>
