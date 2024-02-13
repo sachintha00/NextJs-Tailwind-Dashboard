@@ -1,10 +1,11 @@
-import React from "react";
+'use client'
+import React, { useContext } from "react";
+import { NavBarToggle } from "/app/_lib/context/navbar_toggle_context";
 
 function page() {
+  const isSidebarOpen = useContext(NavBarToggle);
   return (
-    <div
-      className={`ml-[50px] relative overflow-hidden mt-[70px] px-15 py-5`}
-    >
+    <div className={` ${isSidebarOpen ? "ml-[250px]" : "ml-[60px]"} relative overflow-hidden mt-[70px] px-15 py-5`}>
       <div className="container-fluid px-[0.625rem]">
         <div className="grid grid-cols-1 pb-6">
           <h4 className="text-[18px] font-medium mb-sm-0 grow mb-2 md:mb-0">
