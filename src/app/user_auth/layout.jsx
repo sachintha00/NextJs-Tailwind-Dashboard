@@ -4,21 +4,18 @@ import SideImage from "../_assets/images/auth_page_side_image.png";
 
 const AuthLayout = ({ children }) => {
   return (
-    <div className="flex flex-col lg:flex-row">
-      <div className="relative w-full lg:w-1/2 h-80 lg:h-screen">
+    <section className="bg-white">
+      <div className="flex justify-center min-h-screen">
         <NextImage
+          className="hidden bg-cover lg:block lg:w-2/5"
           src={SideImage}
-          alt="Picture of the author"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-        />
+          alt="side-image"
+        ></NextImage>
+        <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
+          {children}
+        </div>
       </div>
-
-      <div className="flex flex-col items-center justify-between w-full p-8 lg:w-1/2 lg:p-20">
-        {children}
-      </div>
-    </div>
+    </section>
   );
 };
 
