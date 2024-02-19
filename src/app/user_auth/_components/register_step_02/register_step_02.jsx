@@ -11,11 +11,6 @@ function RegisterStep02({ onNextStep, onPrevStep }) {
     setSelectedOption(event.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onNextStep();
-  };
-
   return (
     <div>
       <div className="mt-6">

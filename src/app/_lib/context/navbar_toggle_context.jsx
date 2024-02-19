@@ -1,4 +1,4 @@
-'use client'
+"use client";
 const { createContext } = require("react");
 
-export const NavBarToggle = createContext({})
+export const NavBarToggle = createContext({});
