@@ -153,14 +153,31 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                                         ),
                                     })}
                               >
-                                {submenuItem.subMenuName}
+                                {submenuItem.subMenuName} sachintha madhawa
                               </Link>
                             ) : (
                               <li
                                 className="flex items-center justify-between px-4 py-2 cursor-pointer"
-                                onClick={() =>
-                                  toggleSubmenu(mainMenuIndex, submenuIndex)
-                                }
+                                {...(!isSidebarOpen
+                                  ? {
+                                      onMouseEnter: () =>
+                                        toggleSubmenu(
+                                          mainMenuIndex,
+                                          submenuIndex
+                                        ),
+                                      // onMouseLeave: () =>
+                                      //   toggleSubmenu(
+                                      //     mainMenuIndex,
+                                      //     submenuIndex
+                                      //   ),
+                                    }
+                                  : {
+                                      onClick: () =>
+                                        toggleSubmenu(
+                                          mainMenuIndex,
+                                          submenuIndex
+                                        ),
+                                    })}
                               >
                                 {submenuItem.subMenuName}
                                 {submenuItem.submenuItems?.nestedSubMenu && (
