@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { MdDashboard } from "react-icons/md";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -65,7 +64,6 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
   };
 
   const toggleMainMenu = (mainMenuIndex) => {
-    console.log("main menu");
     setMainMenuItems((prevMainMenuItems) => {
       const updatedMainMenuItems = { ...prevMainMenuItems };
       const isExpanded = updatedMainMenuItems[mainMenuIndex];
@@ -99,7 +97,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                     {...(!isSidebarOpen
                       ? {
                           onMouseEnter: () => toggleMainMenu(mainMenuIndex),
-                          onMouseLeave: () => toggleMainMenu(mainMenuIndex),
+                          // onMouseLeave: () => toggleMainMenu(mainMenuIndex),
                         }
                       : { onClick: () => toggleMainMenu(mainMenuIndex) })}
                   >
@@ -123,7 +121,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                     <div
                       className={`${
                         !isSidebarOpen
-                          ? "absolute bg-red-700 shadow-lg whitespace-nowrap"
+                          ? "absolute bg-white shadow-lg whitespace-nowrap left-16"
                           : "ml-2 mt-2"
                       } cursor-pointer`}
                     >
@@ -141,11 +139,11 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                                           mainMenuIndex,
                                           submenuIndex
                                         ),
-                                      onMouseLeave: () =>
-                                        toggleSubmenu(
-                                          mainMenuIndex,
-                                          submenuIndex
-                                        ),
+                                      // onMouseLeave: () =>
+                                      //   toggleSubmenu(
+                                      //     mainMenuIndex,
+                                      //     submenuIndex
+                                      //   ),
                                     }
                                   : {
                                       onClick: () =>
