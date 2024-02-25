@@ -1,19 +1,23 @@
-'use client'
+"use client";
 import React, { useContext } from "react";
 import { NavBarToggle } from "/app/_lib/context/navbar_toggle_context";
 
 function page() {
   const isSidebarOpen = useContext(NavBarToggle);
   return (
-    <div className={` ${isSidebarOpen ? "ml-[250px]" : "ml-[60px]"} relative overflow-hidden mt-[70px] px-15 py-5`}>
-      <div className="container-fluid px-[0.625rem]">
+    <div
+      className={` ${
+        isSidebarOpen ? "ml-[250px]" : "ml-[60px]"
+      } relative overflow-hidden mt-[70px] px-15 py-5 dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]`}
+    >
+      <div className="container-fluid px-[0.625rem] dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]">
         <div className="grid grid-cols-1 pb-6">
           <h4 className="text-[18px] font-medium mb-sm-0 grow mb-2 md:mb-0">
             Dashboard
           </h4>
         </div>
         <div className="grid grid-cols-1 gap-6 gap-y-0 2xl:gap-6 md:grid-cols-2 2xl:grid-cols-4">
-          <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg">
+          <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]">
             <div className="grid items-center grid-cols-12 gap-6">
               <div className="col-span-6">
                 <span className="text-gray-700 ">My Wallet</span>
@@ -39,7 +43,7 @@ function page() {
             </div>
           </div>
 
-          <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg">
+          <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]">
             <div className="grid items-center grid-cols-12 gap-6">
               <div className="col-span-6">
                 <span className="text-gray-700 ">My Wallet</span>
@@ -65,7 +69,7 @@ function page() {
             </div>
           </div>
 
-          <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg">
+          <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]">
             <div className="grid items-center grid-cols-12 gap-6">
               <div className="col-span-6">
                 <span className="text-gray-700 ">My Wallet</span>
@@ -91,7 +95,7 @@ function page() {
             </div>
           </div>
 
-          <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg">
+          <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]">
             <div className="grid items-center grid-cols-12 gap-6">
               <div className="col-span-6">
                 <span className="text-gray-700 ">My Wallet</span>
@@ -118,11 +122,11 @@ function page() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 gap-y-0 2xl:gap-6 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-6 gap-y-0 2xl:gap-6 lg:grid-cols-12 dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]">
           <div className="col-span-12 2xl:col-span-5">
-            <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg">
+            <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]">
               <div>
-                <div className="flex flex-wrap items-center mb-6">
+                <div className="flex flex-wrap items-center mb-6 ">
                   <h5 className="mr-2 font-medium text-gray-800 text-15 ">
                     Wallet Balance
                   </h5>
@@ -198,7 +202,7 @@ function page() {
           </div>
 
           <div className="col-span-12 2xl:col-span-5">
-            <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg">
+            <div className="p-5 mb-6 border border-gray-300 border-solid rounded-lg dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]">
               <div>
                 <div className="flex flex-wrap items-center mb-6">
                   <h5 className="mr-2 font-medium text-gray-800 text-15 ">

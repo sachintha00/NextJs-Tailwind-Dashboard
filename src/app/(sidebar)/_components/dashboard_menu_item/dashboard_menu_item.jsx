@@ -79,7 +79,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
 
   return (
     <div
-      className={`fixed bottom-0 h-screen border-r top-[70px] bg-white border-black-800 z-40`}
+      className={`fixed bottom-0 h-screen border-r top-[70px] bg-white border-black-800 z-40 dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]`}
       style={{ width: isSidebarOpen ? "250px" : "65px" }}
     >
       <nav className="flex-grow mt-2 overflow-y-hidden">
@@ -121,7 +121,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                     <div
                       className={`${
                         !isSidebarOpen
-                          ? "absolute bg-white shadow-lg whitespace-nowrap left-16"
+                          ? "absolute bg-white shadow-lg whitespace-nowrap left-16 dark:bg-[#1c1f26] dark:text-[#9ea9c3]"
                           : "ml-2 mt-2"
                       } cursor-pointer`}
                     >
@@ -198,7 +198,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                                 <ul
                                   className={`${
                                     !isSidebarOpen
-                                      ? "ml-[85px] absolute bg-white shadow-lg "
+                                      ? "ml-[85px] absolute bg-white shadow-lg dark:bg-[#1c1f26] dark:text-[#9ea9c3]"
                                       : "mt-2 ml-6 tree-view"
                                   }`}
                                 >
