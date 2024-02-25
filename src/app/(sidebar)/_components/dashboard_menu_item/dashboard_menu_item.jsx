@@ -83,7 +83,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
       style={{ width: isSidebarOpen ? "250px" : "65px" }}
     >
       <nav className="flex-grow mt-2 overflow-y-hidden">
-        <ul className="mt-10">
+        <ul className="mt-10 ">
           {menuItem.map((mainMenu, mainMenuIndex) => (
             <li key={mainMenuIndex} className="my-6">
               <ul>
