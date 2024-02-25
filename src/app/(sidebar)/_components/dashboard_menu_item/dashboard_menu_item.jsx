@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { MdDashboard } from "react-icons/md";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -65,7 +64,6 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
   };
 
   const toggleMainMenu = (mainMenuIndex) => {
-    console.log("main menu");
     setMainMenuItems((prevMainMenuItems) => {
       const updatedMainMenuItems = { ...prevMainMenuItems };
       const isExpanded = updatedMainMenuItems[mainMenuIndex];
@@ -81,7 +79,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
 
   return (
     <div
-      className={`fixed bottom-0 h-screen border-r top-[70px] bg-white border-black-800 z-40`}
+      className={`fixed bottom-0 h-screen border-r top-[70px] bg-white border-black-800 z-40 dark:bg-[#0e1217] dark:text-[#9ea9c3] dark:border-[#1c1f26]`}
       style={{ width: isSidebarOpen ? "250px" : "65px" }}
     >
       <nav className="flex-grow mt-2 overflow-y-hidden">
@@ -99,7 +97,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                     {...(!isSidebarOpen
                       ? {
                           onMouseEnter: () => toggleMainMenu(mainMenuIndex),
-                          onMouseLeave: () => toggleMainMenu(mainMenuIndex),
+                          // onMouseLeave: () => toggleMainMenu(mainMenuIndex),
                         }
                       : { onClick: () => toggleMainMenu(mainMenuIndex) })}
                   >
@@ -123,7 +121,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                     <div
                       className={`${
                         !isSidebarOpen
-                          ? "absolute bg-red-700 shadow-lg whitespace-nowrap"
+                          ? "absolute bg-white shadow-lg whitespace-nowrap left-16 dark:bg-[#1c1f26] dark:text-[#9ea9c3]"
                           : "ml-2 mt-2"
                       } cursor-pointer`}
                     >
@@ -141,11 +139,11 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                                           mainMenuIndex,
                                           submenuIndex
                                         ),
-                                      onMouseLeave: () =>
-                                        toggleSubmenu(
-                                          mainMenuIndex,
-                                          submenuIndex
-                                        ),
+                                      // onMouseLeave: () =>
+                                      //   toggleSubmenu(
+                                      //     mainMenuIndex,
+                                      //     submenuIndex
+                                      //   ),
                                     }
                                   : {
                                       onClick: () =>
@@ -155,14 +153,31 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                                         ),
                                     })}
                               >
-                                {submenuItem.subMenuName}
+                                {submenuItem.subMenuName} sachintha madhawa
                               </Link>
                             ) : (
                               <li
                                 className="flex items-center justify-between px-4 py-2 cursor-pointer"
-                                onClick={() =>
-                                  toggleSubmenu(mainMenuIndex, submenuIndex)
-                                }
+                                {...(!isSidebarOpen
+                                  ? {
+                                      onMouseEnter: () =>
+                                        toggleSubmenu(
+                                          mainMenuIndex,
+                                          submenuIndex
+                                        ),
+                                      // onMouseLeave: () =>
+                                      //   toggleSubmenu(
+                                      //     mainMenuIndex,
+                                      //     submenuIndex
+                                      //   ),
+                                    }
+                                  : {
+                                      onClick: () =>
+                                        toggleSubmenu(
+                                          mainMenuIndex,
+                                          submenuIndex
+                                        ),
+                                    })}
                               >
                                 {submenuItem.subMenuName}
                                 {submenuItem.submenuItems?.nestedSubMenu && (
@@ -183,7 +198,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                                 <ul
                                   className={`${
                                     !isSidebarOpen
-                                      ? "ml-[85px] absolute bg-white shadow-lg "
+                                      ? "ml-[85px] absolute bg-white shadow-lg dark:bg-[#1c1f26] dark:text-[#9ea9c3]"
                                       : "mt-2 ml-6 tree-view"
                                   }`}
                                 >

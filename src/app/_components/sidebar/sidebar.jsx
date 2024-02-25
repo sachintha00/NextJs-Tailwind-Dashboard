@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardMenuItem from "../dashboard_menu_item/dashboard_menu_item";
+import DashboardMenuItem from "../../(sidebar)/_components/dashboard_menu_item/dashboard_menu_item";
 import { MdDashboard } from "react-icons/md";
 import { IoHome } from "react-icons/io5";
 import { LuUsers } from "react-icons/lu";
@@ -57,6 +57,8 @@ const menuItemObjects = [
         submenuItems: {
           nestedSubMenu: [
             { link: "/dashboard", name: "Nested Test 1" },
+            { link: "/test", name: "Nested Test 1" },
+            { link: "/test", name: "Nested Test 1" },
             { link: "/test", name: "Nested Test 1" },
           ],
         },
