@@ -17,7 +17,7 @@ function Page() {
                 <a href="#" class="">
                   <span class="ms-3">Dashboard</span>
                 </a>
-                <ul class="absolute left-[130px] bg-red-500 top-0 hidden group-hover:block">
+                <ul class="absolute left-[130px] bg-white top-0 hidden group-hover:block">
                   <li class="">
                     <a href="#" class="">
                       Products
@@ -37,7 +37,7 @@ function Page() {
                 <a href="#" class="">
                   <span class="ms-3">Dashboard</span>
                 </a>
-                <ul class="absolute left-[130px] bg-red-500 top-0 hidden group-hover:block">
+                <ul class="absolute left-[130px] bg-white top-0 hidden group-hover:block">
                   <li class="group">
                     <a href="#" class="">
                       Products
@@ -72,7 +72,7 @@ function Page() {
                 </a>
                 <ul
                   id="dropdown-example"
-                  class=" py-2 space-y-2 absolute left-[130px] bg-red-500 top-0 hidden group-hover:block"
+                  class=" py-2 space-y-2 absolute left-[130px] bg-white top-0 hidden group-hover:block"
                 >
                   <li className="group">
                     <a
@@ -84,7 +84,7 @@ function Page() {
                     <ul id="dropdown-example" class=" py-2 space-y-2 ">
                       <li className="relative">
                         <ul id="dropdown-example" class=" py-2 space-y-2">
-                          <li className="bsolute left-[130px] bg-red-500 top-0 hidden group-hover:block">
+                          <li className="bsolute left-[130px] bg-white top-0 hidden group-hover:block">
                             <a
                               href="#"
                               class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
