@@ -153,7 +153,7 @@ function DashboardMenuItem({ isSidebarOpen, menuItem }) {
                                         ),
                                     })}
                               >
-                                {submenuItem.subMenuName} sachintha madhawa
+                                {submenuItem.subMenuName}
                               </Link>
                             ) : (
                               <li
