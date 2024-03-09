@@ -14,7 +14,7 @@ const menuItemObjects = [
   {
     menu: "Apps",
     icon: <MdDashboard className={`mr-2`} size={20} />,
-    // link: "/dashboard",
+    link: "/dashboard",
     subMenu: [
       {
         // link: "/test",
@@ -31,6 +31,19 @@ const menuItemObjects = [
         submenuItems: {
           nestedSubMenu: [
             { link: "/dashboard", name: "Nested Test 1" },
+            { link: "/test", name: "Nested Test 1" },
+          ],
+        },
+      },
+      {
+        subMenuName: "Test 3",
+        submenuItems: {
+          nestedSubMenu: [
+            { link: "/dashboard", name: "Nested Test 1" },
+            { link: "/test", name: "Nested Test 1" },
+            { link: "/test", name: "Nested Test 1" },
+            { link: "/test", name: "Nested Test 1" },
+            { link: "/test", name: "Nested Test 1" },
             { link: "/test", name: "Nested Test 1" },
           ],
         },
